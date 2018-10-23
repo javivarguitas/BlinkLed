@@ -1,5 +1,9 @@
-#include "BlinkLed.h"
+/*Gestiona el parpadeo de un led
+  Autor: Javier Vargas García
+  https://creativecommons.org/licenses/by/4.0/
+*/
 
+#include "BlinkLed.h"
 
 BlinkLed::BlinkLed(int Pin_, int TimeON_, int TimeOFF_){
   Pin = Pin_;
@@ -74,3 +78,10 @@ void BlinkLed::SetPeriod(int Period) {
     TimeOFF = Period / 2;
     T = Period;
 }
+
+void BlinkLed::SetTime(int TimeON_, int TimeOFF_) {
+    TimeON = TimeON_;
+    TimeOFF = TimeOFF_;
+    T = TimeON + TimeOFF;
+}
+

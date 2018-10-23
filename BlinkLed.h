@@ -1,5 +1,6 @@
-/*Libreria para gestianar el estado de un boton, tanto flanco de pulso, como pulso largo.
+/*Gestiona el parpadeo de un led
   Autor: Javier Vargas García
+  https://creativecommons.org/licenses/by/4.0/
 */
 
 #include "Arduino.h"
@@ -8,7 +9,7 @@ class BlinkLed {
  public:
   BlinkLed(int Pin, int TimeON, int TimeOFF); //Constructor
   BlinkLed(int Pin, int Period);
-  void begin();
+  void begin(); //Pinmode
   void Update(); //Acutaliza el estado del led en funcion del tiempo
   bool GetStatus(); //Devuelve el estado del led
   void Off(); //Apaga el led
@@ -16,6 +17,7 @@ class BlinkLed {
   void NoBlink(); //Desactiva el parpadeo
   void Blink(); //Activa el parpadeo
   void SetPeriod(int Period); //Ajusta el periodo del parpadeo
+  void SetTime(int TimeON, int TimeOFF); //Ajusta el tiempo de on/off
 
 private:
   int Pin;

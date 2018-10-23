@@ -12,11 +12,12 @@ void setup() {
   delay(1000);
   led.Off();  //Apaga el led
   delay(1000);
-  led.Blink();
-  led.On();
+  led.Blink(); //Activa el parpadeo
+  led.On(); //Enciende el led
 }
 
 void loop() {
   led.Update(); //Actualiza el estado del led
   //led.SetPeriod(100); //Reajusta el periodo de parpadeo
+  //led.SetTime(500, 100); //Reajusta el tiempo de on / off
 }
